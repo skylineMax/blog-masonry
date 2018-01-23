@@ -1,0 +1,256 @@
+@import 'colors.scss';
+@import "fonts.scss";
+@import "burger.scss";
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Montserrat Light', sans-serif;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right:0;
+  width: 100%;
+  z-index: 2;
+}
+
+
+
+header {
+  height: 100px;
+  background: #fff;
+  .row-flex {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 38px 0;
+    .btns {
+      position: absolute;
+      top:34px;
+      left:0;
+    }
+    .navbar {
+      padding-left: 0;
+      padding-right: 0;
+      .menu {
+        display: none;
+        .nav {
+          font-family: 'Montserrat Regular', sans-serif;
+          text-transform: uppercase;
+          li {
+            padding-left: 25px;
+            a{
+              color: #000;
+              text-decoration: none;
+              &:hover {
+                color: blue;
+              }
+            }
+            &:last-child{
+              padding-right: 25px;
+            }
+          }
+        }
+      }
+      .social-top {
+        padding-right: 25px;
+      }
+    }
+  }
+
+}
+main {
+  .title {
+    margin-bottom: 55px;
+    h1 {
+      margin-bottom: 20px;
+      font-family: 'Droid', serif;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    span {
+      font-size: 1.5rem;
+    }
+
+  }
+  .card-img {
+    position: relative;
+    &:hover {
+      background: #5a6268;
+    }
+    .triangle {
+      position: absolute;
+      bottom:0;
+      color: #fff;
+      left: calc(50% - 1.25rem);
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid;
+    }
+  }
+  .card-img-overlay {
+    .date, .comments, .triangle {
+      position: absolute;
+      bottom:0;
+      color: #fff;
+    }
+    .date {
+      left: 1.25rem;
+    }
+    .comments {
+      right: 1.25rem;
+    }
+
+    &:hover {
+      background: linear-gradient(0deg, #5a6268, white);
+      opacity: 0.8;
+
+    }
+
+  }
+  .card-body {
+    padding-left: 0;
+    padding-right:0;
+    .category {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    a {
+      color: #2cc46e;
+    }
+    .card-text + a {
+      font-family: 'Montserrat Regular', sans-serif;
+      font-weight:500;
+      color: #000;
+    }
+  }
+}
+footer {
+  .subscribe {
+    padding: 60px 0;
+    background: #f7f7f7;
+    h2 {
+      margin-bottom: 30px;
+      font-family: 'Montserrat Regular', sans-serif;
+    }
+    input[type='submit']:hover {
+      background: #0CBB58;
+      border: 1px solid #0CBB58;
+    }
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+  }
+}
+
+.social {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  .hov {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    &__facebook:hover {
+      background: $facebook;
+    }
+    &__google-plus:hover {
+      background: $google-plus;
+    }
+    &__twitter:hover {
+      background: $twitter;
+    }
+    &__dribbble:hover {
+      background: $dribbble;
+    }
+    &__instagram:hover {
+      background: $instagram;
+    }
+    &:hover {
+      .fa {
+        color: #fff;
+      }
+    }
+    .fa {
+      color: #000;
+    }
+  }
+
+}
+
+@media screen and (max-width: 495px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    .copy {
+      margin-bottom: 25px;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .menu {
+    position: fixed;
+    right:0;
+    top:0;
+    height: 100%;
+    width: 250px;
+    z-index: 999;
+    overflow: hidden;
+
+    .nav {
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      li {
+        margin: 10px 0;
+        &:first-child {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+  .close-btn {
+    position: fixed;
+    display: none;
+    right:0;
+    top:45px;
+    z-index: 999;
+    .close {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: #000;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
